@@ -24,9 +24,11 @@ module Properties = struct
   let t_to_js x = Ojs.t_to_js x
 end]
 
+[@@@ocamlformat "disable=true"]
+
 val track :
   event:string ->
-  ?properties:Properties.t ->
+  ?properties:(Properties.t [@js.default Properties.create []]) ->
   ?options:track_opt ->
   ?options_transport:string ->
   ?options_send_immediatly:bool ->
@@ -34,6 +36,8 @@ val track :
   unit ->
   unit
   [@@js.global "mixpanel.track"]
+
+[@@@ocamlformat "disable=false"]
 
 val get_distinct_id : unit -> string [@@js.global "mixpanel.get_distinct_id"]
 
