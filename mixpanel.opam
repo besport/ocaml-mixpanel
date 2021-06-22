@@ -1,4 +1,5 @@
 opam-version: "2.0"
+version: "1.0"
 maintainer:   "Thibaut Gudin <tgudin@besport.com>"
 authors:      "Thibaut Gudin <tgudin@besport.com>"
 homepage:     "https://github.com/Thibaut-Gudin/ocaml-mixpanel"
