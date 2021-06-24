@@ -16,7 +16,7 @@ Source: [mixpanel.com](https://developer.mixpanel.com/docs/what-is-mixpanel)
 
 You can use opam by pinning the repository with:
 ```Shell
-opam pin add mixpanel https://github.com/Thibaut-Gudin/ocaml-mixpanel.git
+opam pin add mixpanel https://github.com/besport/ocaml-mixpanel.git
 ```
 
 to compile your project, use:
@@ -34,7 +34,7 @@ cordova plugin add mixpanel
 
 ### Mixpanel.available
 You can use this function to know if the object "Mixpanel" is available
-in your project, it is recommended tu use it before to call the
+in your project, it is recommended to use it before to call the
 functions that depend on the server Mixpanel, if "available" retrun
 "false" your should probably cancel your call to the function (or else
 their will be a chance that program became stuck: waiting a reponse of
