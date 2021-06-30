@@ -55,32 +55,31 @@ val people_set :
 type config
 
 val config :
-  ?apiHost:string ->
-  ?appHost:string ->
+  ?api_host:string ->
+  ?app_host:string ->
   ?autotrack:bool ->
   ?cdn:string ->
-  ?crossSubdomainCookie:bool ->
+  ?cross_subdomain_cookie:bool ->
   ?persistence:string ->
-  ?persistenceName:string ->
-  ?cookieName:string ->
+  ?persistence_name:string ->
+  ?cookie_name:string ->
   ?loaded:(Ojs.t -> unit) ->
-  ?storeGoogle:bool ->
-  ?saveReferrer:bool ->
+  ?store_google:bool ->
+  ?save_referrer:bool ->
   ?test:bool ->
   ?verbose:bool ->
   ?img:bool ->
-  ?trackLinksTimeout:int ->
-  ?cookieExpiration:int ->
+  ?track_links_timeout:int ->
+  ?cookie_expiration:int ->
   ?upgrade:bool ->
-  ?disablePersistence:bool ->
-  ?disableCookie:bool ->
-  ?secureCookie:bool ->
+  ?disable_persistence:bool ->
+  ?disable_cookie:bool ->
+  ?secure_cookie:bool ->
   ?ip:bool ->
-  (*Check if PropertyBlacklist realy is a string list...*)
-  ?propertyBlacklist:string list ->
+  ?property_blacklist:string list ->
   unit ->
   config
-  [@@js.builder]
+  [@@js.builder] [@@js.verbatim_names]
 
 val init : token:string -> ?config:config -> ?name:string -> unit -> unit
   [@@js.global "mixpanel.init"]
