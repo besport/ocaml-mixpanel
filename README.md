@@ -107,7 +107,26 @@ Mixpanel.track ~event:"Event name" ~properties
                                    else print_endline "Track Succeed")
                ()
 ```
+#### Mixpanel.Lwt.track
+The module "Lwt" provide an implementation of "track" that return a
+"promise" of a result, under the form of an "Ojs.t Lwt.t" object. This
+version of "track" can't receive a "callback" argument because it is
+used to "wakeup" the result, indeed: this function will return an order
+to "wait" until the "Mixpanel.track" is done. Once the "track" is done,
+the callback execution will put an end to the "wait".
+Exemple:
+```Shell
+print_endline "Wait";
+let%lwt _ = Mixpanel.Lwt.track ~event:"Track LWT" () in
+print_endline "Wake Up";
+```
+        => In this example the "Wake Up" line won't be printed before
+        the "track" is sent to Mixpanel.
 
+[Learn more about Lwt](https://ocsigen.org/lwt/latest/manual/manual)
+
+Warning: if the "track" to Mixpanel failed (if it returns a "false"),
+this function will return an exception "Track_Failed".
 
 ### Mixpanel.get_distinct_id
 This function returns the current "distinct id" of the user.
