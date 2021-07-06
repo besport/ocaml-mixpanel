@@ -19,3 +19,45 @@ let track ~event ?properties ?options ?options_transport
           then raise Track_Failed)
     () ;
   wait
+
+let init ~token ?api_host ?app_host ?autotrack ?cdn ?cross_subdomain_cookie
+    ?persistence ?persistence_name ?cookie_name ?loaded ?store_google
+    ?save_referrer ?test ?verbose ?img ?track_links_timeout ?cookie_expiration
+    ?upgrade ?disable_persistence ?disable_cookie ?secure_cookie ?ip
+    ?property_blacklist ?name () =
+  let (wait, wakeup) = Lwt.task () in
+  let new_loaded _ =
+    match loaded with
+    | None -> Lwt.wakeup wakeup true
+    | Some x ->
+        Lwt.wakeup wakeup true ;
+        x
+  in
+  let config =
+    Base.config
+      ~loaded:new_loaded
+      ?api_host
+      ?app_host
+      ?autotrack
+      ?cdn
+      ?cross_subdomain_cookie
+      ?persistence
+      ?persistence_name
+      ?cookie_name
+      ?store_google
+      ?save_referrer
+      ?test
+      ?verbose
+      ?img
+      ?track_links_timeout
+      ?cookie_expiration
+      ?upgrade
+      ?disable_persistence
+      ?disable_cookie
+      ?secure_cookie
+      ?ip
+      ?property_blacklist
+      ()
+  in
+  Base.init ~token ~config ?name () ;
+  wait
