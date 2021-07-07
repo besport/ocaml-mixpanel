@@ -101,3 +101,11 @@ val available : unit -> bool
 [@@@js.implem
 let available () =
   Js_of_ocaml.Js.Optdef.test Js_of_ocaml.Js.Unsafe.global##.mixpanel]
+
+val set_group :
+  group_key:string ->
+  group_ids:string list ->
+  ?callback:(Ojs.t -> unit) ->
+  unit ->
+  unit
+  [@@js.global "mixpanel.set_group"]
