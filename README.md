@@ -65,7 +65,7 @@ Mixpanel.init ~token ~config ~name
   [See the default config options](https://github.com/mixpanel/mixpanel-js/blob/8b2e1f7b/src/mixpanel-core.js#L87-L110)
 
 ### What is the type Properties.t?
-The type "Properties.t" is an associative array of properties to store about the use (for
+The type "Properties.t" is an associative array of properties to store about the user (for
 example "{'Gender': 'Male', 'Age': 21}"), this type is used for
 several function arguments.
 You can create a "Properties.t" object with the function
@@ -176,3 +176,15 @@ Mixpanel.
 > Clears super properties and generates a new random distinct_id for this instance. Useful for clearing data when a user logs out.
 
 Source : [mixpanel API](https://developer.mixpanel.com/docs/javascript-full-api-reference#mixpanelreset)
+
+### Mixpanel.set_group
+> Register the current user into one/many groups.
+
+Source : [mixapnel API](https://developer.mixpanel.com/docs/javascript-full-api-reference#mixpanelset_group)
+
+The second argument "group_ids" have to be a list (even if their is
+only 1 element), in addition, even if the Mixpanel AST say that the list
+can contain either "string" elements or "int" elements, in this plugin
+you have to gave string argument only.
+The optional argument "callback" is a function that will be called afte
+the "set_group" execution is done.

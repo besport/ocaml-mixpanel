@@ -19,3 +19,17 @@ let track ~event ?properties ?options ?options_transport
           then raise Track_Failed)
     () ;
   wait
+
+let set_group ~group_key ~group_ids ?callback () =
+  let (wait, wakeup) = Lwt.wait () in
+  let new_callback =
+    match callback with
+    | None -> ( function payload -> Lwt.wakeup wakeup payload )
+    | Some x -> (
+        function
+        | payload ->
+            Lwt.wakeup wakeup payload ;
+            x payload )
+  in
+  Base.set_group ~group_key ~group_ids ~callback:new_callback () ;
+  wait
