@@ -109,3 +109,15 @@ val set_group :
   unit ->
   unit
   [@@js.global "mixpanel.set_group"]
+
+module Group : sig
+  type group_id
+
+  (*Pas sûr de si c'est bien des properties*)
+  val get_group : group_key:string -> group_id:Ojs.t -> group_id
+    [@@js.global "mixpanel.get_group"]
+
+  val set :
+    group_id -> prop:Properties.t -> ?callback:(Ojs.t -> unit) -> unit -> unit
+    [@@js.call]
+end
