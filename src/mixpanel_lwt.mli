@@ -34,9 +34,4 @@ val init :
   unit ->
   unit Lwt.t
 
-val set_group :
-  group_key:string ->
-  group_ids:string list ->
-  ?callback:(Ojs.t -> unit) ->
-  unit ->
-  Ojs.t Lwt.t
+val set_group : group_key:string -> group_ids:string list -> Ojs.t Lwt.t
