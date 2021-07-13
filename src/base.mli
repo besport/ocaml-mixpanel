@@ -63,7 +63,7 @@ val config :
   ?persistence:string ->
   ?persistence_name:string ->
   ?cookie_name:string ->
-  ?loaded:(Ojs.t -> unit) ->
+  ?loaded:(unit -> unit) ->
   ?store_google:bool ->
   ?save_referrer:bool ->
   ?test:bool ->

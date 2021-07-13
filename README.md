@@ -64,17 +64,6 @@ Mixpanel.init ~token ~config ~name
 ```
   [See the default config options](https://github.com/mixpanel/mixpanel-js/blob/8b2e1f7b/src/mixpanel-core.js#L87-L110)
 
-### Mixpanel.Lwt.init
-The module "Lwt" provide an implementation of "init" that put your
-application in "wait" status until the "init" is over.
-All the possible properies of an object "config" have to be given
-individually in this case as optional arguments, thiere were no other
-solution found to provides user to gave an argument "loaded" while
-maintaining the possibility to gave "config" argument.
-This constarint had to be added because this function will use the
-"loaded" propertie of "config" to wakeup the program, in practice a
-"unit" will be add to the "loaded" that can gave a user in argument.
-
 ### What is the type Properties.t?
 The type "Properties.t" is an associative array of properties to store about the use (for
 example "{'Gender': 'Male', 'Age': 21}"), this type is used for
