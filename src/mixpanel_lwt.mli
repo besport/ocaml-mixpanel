@@ -17,7 +17,6 @@ val init :
   ?persistence:string ->
   ?persistence_name:string ->
   ?cookie_name:string ->
-  ?loaded:unit ->
   ?store_google:bool ->
   ?save_referrer:bool ->
   ?test:bool ->
@@ -33,4 +32,4 @@ val init :
   ?property_blacklist:string list ->
   ?name:string ->
   unit ->
-  bool Lwt.t
+  unit Lwt.t
