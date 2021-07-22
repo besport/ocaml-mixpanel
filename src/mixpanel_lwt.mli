@@ -33,3 +33,5 @@ val init :
   ?name:string ->
   unit ->
   unit Lwt.t
+
+val set_group : group_key:string -> group_ids:string list -> Ojs.t Lwt.t
