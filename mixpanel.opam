@@ -11,6 +11,7 @@ synopsis: "Binding to the mixpanel plugin using gen_js_api"
 build: [[ "dune" "build" "-j" jobs "-p" name "@install" ]]
 depends: [
   "ocaml" { >= "4.08.0" }
+  "dune" {>= "2.7"}
   "gen_js_api"
   "js_of_ocaml"
   "js_of_ocaml-ppx"
