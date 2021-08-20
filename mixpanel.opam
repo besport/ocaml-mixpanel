@@ -1,5 +1,5 @@
 opam-version: "2.0"
-version: "3.1"
+version: "3.1.1"
 maintainer:   "Thibaut Gudin <tgudin@besport.com>"
 authors:      "Thibaut Gudin <tgudin@besport.com>"
 homepage:     "https://github.com/besport/ocaml-mixpanel"
@@ -12,7 +12,7 @@ build: [[ "dune" "build" "-j" jobs "-p" name "@install" ]]
 depends: [
   "ocaml" { >= "4.08.0" }
   "gen_js_api"
-  "js_of_ocaml" {>= "3.8.0" & < "3.9.0"}
-  "js_of_ocaml-ppx" {>= "3.8.0" & < "3.9.0"}
-  "lwt_ppx" {>= "2.0.1" & < "2.1.0"}
+  "js_of_ocaml"
+  "js_of_ocaml-ppx"
+  "lwt_ppx"
   ]
