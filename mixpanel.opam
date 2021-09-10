@@ -1,5 +1,5 @@
 opam-version: "2.0"
-version: "3.1.1"
+version: "3.2"
 maintainer:   "Thibaut Gudin <tgudin@besport.com>"
 authors:      "Thibaut Gudin <tgudin@besport.com>"
 homepage:     "https://github.com/besport/ocaml-mixpanel"
@@ -16,4 +16,5 @@ depends: [
   "js_of_ocaml"
   "js_of_ocaml-ppx"
   "lwt_ppx"
+  "tyxml"
   ]
