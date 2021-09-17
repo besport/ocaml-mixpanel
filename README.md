@@ -40,6 +40,19 @@ functions that depend on the server Mixpanel, if "available" retrun
 their will be a chance that program became stuck: waiting a reponse of
 Mixpanel that could never came).
 
+### `Mixpanel.script`
+This function execute a pre-defined *Java Script* script in your app, it
+is recommended to call this function in server side of your app befor to
+use other function if this script is suitable for you. You can see what
+this script do in the `base.mli` file.
+This script is retruned in the form of an `[> Html_types.script ]
+Tyxml_html.elt list` value. It require you to use the `TyXML` librarie,
+you can see the [Ocsigen official
+documentation](https://ocsigen.org/tyxml/latest/manual/intro) for more
+details, more precisely [this
+section](https://ocsigen.org/tyxml/4.0/api/Html_sigs.Make.T) for a
+better understanding of what this function return.
+
 ### `Mixpanel.init`
 > This function initializes a new instance of the Mixpanel tracking
 object. All new instances are added to the main mixpanel object as sub
