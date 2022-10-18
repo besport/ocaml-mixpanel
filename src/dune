@@ -7,6 +7,6 @@
  (public_name mixpanel)
  (name mixpanel)
  (modes byte)
- (libraries gen_js_api js_of_ocaml js_of_ocaml-ppx lwt_ppx)
+ (libraries gen_js_api js_of_ocaml)
  (preprocess (pps js_of_ocaml-ppx lwt_ppx))
 )
